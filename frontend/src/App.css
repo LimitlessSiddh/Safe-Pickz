@@ -1,0 +1,129 @@
+/* General Styles */
+.App {
+  text-align: center;
+  font-family: 'Roboto', sans-serif; /* More modern font */
+  background-color: #1A1A1A; /* Dark background for a sleek feel */
+  color: #E0E0E0; /* Light grey text for contrast */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 3rem;
+  overflow: hidden; /* Prevent scrollbars on some screens */
+}
+
+/* Header and Logo */
+.header {
+  background: none;
+  width: 100%;
+  padding: 2.5rem 0;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #00FF90;
+}
+
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-15px);
+  }
+}
+
+/* Main Content */
+.main {
+  width: 100%;
+  max-width: 650px;
+  background: rgba(0, 0, 0, 0.7); /* Slight transparent background to add depth */
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 255, 144, 0.3);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Increased spacing for modern feel */
+}
+
+.input-box {
+  width: 100%;
+  padding: 1.8rem;
+  font-size: 1.2rem;
+  border: 2px solid #00FF90; /* Neon green border */
+  border-radius: 12px;
+  resize: none;
+  background-color: #2B2B2B; /* Dark background for input box */
+  color: #E0E0E0;
+  transition: transform 0.2s ease, border-color 0.3s ease;
+}
+
+.input-box:focus {
+  border-color: #FF007F; /* Neon pink when focused */
+  transform: scale(1.02); /* Slightly enlarge the input box for focus effect */
+  outline: none;
+}
+
+.submit-button {
+  background-color: #FF007F; /* Neon pink */
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 20px rgba(255, 0, 127, 0.5);
+}
+
+.submit-button:hover {
+  background-color: #D6006F; /* Darker pink for hover effect */
+  transform: scale(1.05); /* Enlarge button on hover */
+}
+
+.submit-button:active {
+  transform: scale(1); /* Slight shrink on click */
+}
+
+/* Results Section */
+.results {
+  margin-top: 4rem; /* More space from the form */
+}
+
+.results-box {
+  background-color: #1F1F1F; /* Darker box for results */
+  color: #E0E0E0;
+  border: 2px solid #00FF90; /* Neon green border */
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 255, 144, 0.2);
+  text-align: left;
+  animation: fadeIn 0.5s ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+.results-box:hover {
+  transform: scale(1.02); /* Slight zoom effect when hovered */
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+
+
+
+
