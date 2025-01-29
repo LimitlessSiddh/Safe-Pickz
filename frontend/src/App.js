@@ -9,26 +9,27 @@ function App() {
     const [upcomingGames, setUpcomingGames] = useState([]);
     const [liveGames, setLiveGames] = useState([]);
 
-    // API endpoint and key
-    const apiKey = "YOUR_API_KEY"; // Replace with your actual API key
-    const apiUrl = "https://api.sportsdata.io/v3/soccer/scores/json/GamesLive"; // Example URL
+    // API credentials
+    const apiKey = "5b0e3d947emshcb885ce237a24f3p1a647ajsn0cedbf51183a";
+    const apiHost = "api-nba-v1.p.rapidapi.com";
 
     useEffect(() => {
-        // Fetch live games
-        axios
-            .get(`${apiUrl}?key=${apiKey}`)
-            .then((response) => {
-                setLiveGames(response.data);
-            })
-            .catch((error) => console.error("Error fetching live games:", error));
+        // Fetch live games using Axios
+        const fetchLiveGames = async () => {
+            try {
+                const response = await axios.get("https://api-nba-v1.p.rapidapi.com/games", {
+                    headers: {
+                        "x-rapidapi-key": apiKey,
+                        "x-rapidapi-host": apiHost
+                    }
+                });
+                setLiveGames(response.data.response || []);
+            } catch (error) {
+                console.error("Error fetching live games:", error);
+            }
+        };
 
-        // Fetch upcoming games (You can update the URL as needed for your API)
-        axios
-            .get(`https://api.sportsdata.io/v3/soccer/scores/json/GamesBySeason/2025?key=${apiKey}`)
-            .then((response) => {
-                setUpcomingGames(response.data);
-            })
-            .catch((error) => console.error("Error fetching upcoming games:", error));
+        fetchLiveGames();
     }, []);
 
     const handleSubmit = (e) => {
@@ -75,6 +76,10 @@ function App() {
 }
 
 export default App;
+
+
+
+
 
 
 
